@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            margin: 15px auto;
+            width: 800px;
+            height: 400px;
+            /*background-color: pink;*/
+        }
+        h1 {
+            text-align: center;
+            font-weight: 400;
+        }
+        pre {
+            width: 90%;
+            margin: 0 auto;
+            background-color: #000000;
+            color: aqua;
+            border: 1px solid #c70000;
+        }
+    </style>
+</head>
+<body>
+  <div>
+    <h1>
+        免费API使用教程
+    </h1>
+      <pre>
+        import requests
+        # 你的图片地址
+        filename = '/home/tang/图片/captcha.jpg'
+        f = open(filename, "rb")
+        data = {
+            'uuid':'666'
+        }
+        files = [("img", (filename, f, "file/xlsx"))]
+        data = requests.post('http://127.0.0.1:5000/api/img',files=files,data=data).json()
+        print(data)
+          ------------------------------------------------------
+        返回 {'code': '200', 'res': 'acs3'}
+      </pre>
+  </div>
+</body>
+</html>
